@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Axios from 'axios'
 
 
+
 const CreateProduct = () => {
 
   let [product, setProduct] = useState({
@@ -15,6 +16,7 @@ const CreateProduct = () => {
   })
 
   let [submitted, setSubmitted] = useState(false)
+  // let [errormessage, setErrormessage] = useState('')
   
   let updateHandler = (event) => {
     setProduct({ ...product, [event.target.name]: event.target.value })
@@ -29,13 +31,34 @@ const CreateProduct = () => {
     Axios.post(url, product).then((response) => {
       console.log(response.data)
       setSubmitted(true);
-    }).catch(() => { })
-
+    }).catch(() => {
+      
+     })
 
   }
 
+  // Change Image
+
+  let changeImage = async (event) => {
+    let imageFile = event.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(imageFile);
+    reader.addEventListener('load', () => {
+        if(reader.result){
+            setProduct({
+                ...product,
+                image : reader.result
+            });
+        }
+        else {
+            alert('Error Occurred');
+        }
+    });
+};
+
 
   return <>
+
     <div className="container mt-5">
       <pre>{JSON.stringify(product)}</pre>
       <pre>{JSON.stringify(submitted)}</pre>
@@ -54,7 +77,7 @@ const CreateProduct = () => {
                   <input type="number" onChange={updateHandler} name='price' className='form-control' placeholder='Price' />
                 </div>
                 <div className='form-group'>
-                  <input type="file" onChange={updateHandler} name='image' className='form-control-file' placeholder='Image' />
+                  <input type="file" onChange={changeImage} name='image' className='form-control-file' placeholder='Image' />
                 </div>
                 <div className='form-group'>
                   <input type="number" onChange={updateHandler} name='qty' className='form-control' placeholder='Qty' />
