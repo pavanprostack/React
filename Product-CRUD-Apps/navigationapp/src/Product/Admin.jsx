@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Axios from 'axios'
 
+
 const Admin = () => {
     let [products, setProducts]=useState([])
     let [errorMessage, setErrorMessage]= useState('')
@@ -25,7 +26,6 @@ const Admin = () => {
                     <th>Image</th>
                     <th>Price</th>
                     <th>Qty</th>
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
