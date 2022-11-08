@@ -47,7 +47,7 @@ const Search1 = () => {
                             <li key={user.id} className='user'>
                                 <span className='user-id'>{user.id}</span>
                                 <span className='user-name'>{user.name}</span>
-                                <span className='user-age'>{user.age} Year Old </span>
+                                <span className='user-age'>{user.age} Years Old </span>
                             </li>
                         ))
                     }

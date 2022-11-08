@@ -8,8 +8,8 @@ const Navbar = () => {
     <div className='ml-auto'>
         <ul className='navbar-nav'>
             <li className='nav-list'><Link className='nav-link' to="search">Search</Link></li>
-            <li className='nav-list'><Link className='nav-link' to="search1">Search</Link></li>
-            <li className='nav-list'><Link className='nav-link' to="searchapidata">Search</Link></li>
+            <li className='nav-list'><Link className='nav-link' to="search1">Search1</Link></li>
+            <li className='nav-list'><Link className='nav-link' to="searchapidata">SearchApiData</Link></li>
         </ul>
     </div>
   </nav>

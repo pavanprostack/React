@@ -7,38 +7,25 @@ const SearchAPIData = () => {
 
     let [products, setProduct] = useState({})
 
+    // Search Operation
+
     let [searchName, setSearchName] = useState('')
 
-    // let url = 'https://dummyjson.com/products'
     let [foundProduct, setFoundProduct] = useState({})
-    console.log(foundProduct)
 
     let filter = (e) => {
-
         let keyWord = e.target.value
-        console.log(keyWord)
+        console.log(keyWord);
+        setSearchName(keyWord)
 
         if (searchName !== "") {
-            let result = foundProduct.products.filter((singleProduct) => {
-                // console.log(singleProduct);
-                return singleProduct.title.toLowerCase().startsWith(keyWord.toLowerCase())
+            let results = foundProduct.products.filter((singleProduct) => {
+                return singleProduct.title.toLowerCase().startsWith(searchName.toLowerCase());
             })
-            setFoundProduct(result)
-
+            setFoundProduct(results);
         } else {
-
-            setFoundProduct(products)
-
+            setFoundProduct(foundProduct)
         }
-
-
-    }
-
-    let mainFun = (event) => {
-        let keyWord = event.target.value
-        setSearchName(keyWord)
-        // console.log(searchName)
-        filter()
     }
 
     useEffect(() => {
@@ -54,7 +41,7 @@ const SearchAPIData = () => {
             <div className="row">
                 <div className="col">
 
-                    <input type="search" className='input' value={searchName} placeholder='Filter' onChange={mainFun} />
+                    <input type="search" className='input' value={searchName} placeholder='Filter' onChange={filter} />
 
                     <table className='table table-hover'>
                         <thead className='bg-primary text-white'>
@@ -65,6 +52,19 @@ const SearchAPIData = () => {
                             </tr>
                         </thead>
                         <tbody>
+                            {/* {
+                              foundProduct && Object.keys(foundProduct).length > 0 ? <>
+                              {
+                                foundProduct.products.map((product)=>{
+                                    return <tr key={product.id}>
+                                        <td>{product.id}</td>
+                                        <td>{product.title}</td>
+                                        <td>{product.price}</td>
+                                    </tr>
+                                })
+                              }
+                              </> : null
+                            } */}
                             {
                                 Object.keys(products).length > 0 ? <>
                                     {
