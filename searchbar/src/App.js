@@ -1,11 +1,20 @@
 import React from 'react'
 import Search from './Components/Search'
 import Search1 from './Components/Search1'
+import SearchAPIData from './Components/SearchAPIData'
+import Navbar from './Navbar/Navbar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   return <>
-  <Search />
-  <Search1 />
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='search' element={<Search/>}/>
+        <Route path='search1' element={<Search1/>}/>
+        <Route path='searchapidata' element={<SearchAPIData/>}/>
+      </Routes>
+    </Router>
   </>
 }
 

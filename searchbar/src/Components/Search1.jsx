@@ -21,7 +21,7 @@ const Search1 = () => {
 
     let filter = (e) => {
         let keyWord = e.target.value
-        if (keyWord != "") {
+        if (keyWord !== "") {
             const results = USERS.filter((user) => {
                 return user.name.toLowerCase().startsWith(keyWord.toLowerCase())
             })
@@ -36,7 +36,7 @@ const Search1 = () => {
 
     return <>
         <div className="container">
-            <input type="text" value={name} className='input' placeholder='Filter' onChange={filter} />
+            <input type="search" value={name} className='input' placeholder='Filter' onChange={filter} />
         </div>
 
         <div className='user-list'>
