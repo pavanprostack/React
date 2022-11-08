@@ -31,9 +31,7 @@ const CreateProduct = () => {
     Axios.post(url, product).then((response) => {
       console.log(response.data)
       setSubmitted(true);
-    }).catch(() => {
-      
-     })
+    }).catch(() => {})
 
   }
 
@@ -45,10 +43,7 @@ const CreateProduct = () => {
     reader.readAsDataURL(imageFile);
     reader.addEventListener('load', () => {
         if(reader.result){
-            setProduct({
-                ...product,
-                image : reader.result
-            });
+            setProduct({ ...product, image : reader.result});
         }
         else {
             alert('Error Occurred');

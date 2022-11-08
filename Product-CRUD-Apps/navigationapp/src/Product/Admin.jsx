@@ -36,7 +36,7 @@ const Admin = () => {
                         return <tr key={index}>
                             <td>{product.name}</td>
                             <td><img src={product.image} alt="img" width='70px'/></td>
-                            <td>{product.name}</td>
+                            <td>{product.price}</td>
                             <td>{product.qty}</td>
                         </tr>
                     })
