@@ -24,7 +24,7 @@ const SearchApiDataWithOutBtn = () => {
         }
     }
 
-    let refresh = (e)=>{
+    let refresh = ()=>{
         const searchName = ""
         if(searchName === ""){
             setFoundUser(users)
