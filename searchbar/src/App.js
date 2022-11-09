@@ -4,6 +4,7 @@ import Search1 from './Components/Search1'
 import SearchAPIData from './Components/SearchAPIData'
 import Navbar from './Navbar/Navbar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import SearchApiDataWithOutBtn from './Components/SearchApiDataWithOutBtn'
 
 const App = () => {
   return <>
@@ -13,6 +14,7 @@ const App = () => {
         <Route path='search' element={<Search/>}/>
         <Route path='search1' element={<Search1/>}/>
         <Route path='searchapidata' element={<SearchAPIData/>}/>
+        <Route path='searchdata' element={<SearchApiDataWithOutBtn/>}/>
       </Routes>
     </Router>
   </>

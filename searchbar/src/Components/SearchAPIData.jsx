@@ -11,27 +11,38 @@ const SearchAPIData = () => {
 
     let [searchName, setSearchName] = useState('')
 
-    let [foundProduct, setFoundProduct] = useState({})
+    let [foundProduct, setFoundProduct] = useState(products)
 
-    let filter = (e) => {
-        let keyWord = e.target.value
+    let handleClick = () => {
+        alert("Please enter fields")
+    }
+
+    let getdata = (event) => {
+        let keyWord = event.target.value
         console.log(keyWord);
         setSearchName(keyWord)
+    }
+    let filter = () => {
 
         if (searchName !== "") {
-            let results = foundProduct.products.filter((singleProduct) => {
+            let results = products.filter((singleProduct) => {
                 return singleProduct.title.toLowerCase().startsWith(searchName.toLowerCase());
             })
             setFoundProduct(results);
-        } else {
-            setFoundProduct(foundProduct)
+        }
+    }
+    let refresh = () => {
+        const searchName = ""
+        if (searchName === "") {
+            setFoundProduct(products)
         }
     }
 
     useEffect(() => {
         Axios.get('https://dummyjson.com/products').then((res) => {
-            setProduct(res.data)
-            setFoundProduct(res.data)
+            let dataArray = (res.data).products
+            setProduct(dataArray)
+
         }).catch(() => { })
     }, [])
     return <>
@@ -41,9 +52,19 @@ const SearchAPIData = () => {
             <div className="row">
                 <div className="col">
 
-                    <input type="search" className='input' value={searchName} placeholder='Filter' onChange={filter} />
+                    <input type="search"
+                        className='input'
+                        value={searchName}
+                        placeholder='Filter'
+                        onChange={getdata}
+                        onFocus={refresh}
+                    />
 
-                    <table className='table table-hover'>
+                    <input type="button"
+                        value="search"
+                        onClick={searchName === "" ? handleClick : filter.bind(this, searchName)} />
+
+                    <table className='tble table-hover'>
                         <thead className='bg-primary text-white'>
                             <tr>
                                 <th>ID</th>
@@ -52,23 +73,11 @@ const SearchAPIData = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* {
-                              foundProduct && Object.keys(foundProduct).length > 0 ? <>
-                              {
-                                foundProduct.products.map((product)=>{
-                                    return <tr key={product.id}>
-                                        <td>{product.id}</td>
-                                        <td>{product.title}</td>
-                                        <td>{product.price}</td>
-                                    </tr>
-                                })
-                              }
-                              </> : null
-                            } */}
+
                             {
-                                Object.keys(products).length > 0 ? <>
+                                foundProduct.length > 0 ? <>
                                     {
-                                        products.products.map((product) => {
+                                        foundProduct.map((product) => {
                                             return <tr key={product.id}>
                                                 <td>{product.id}</td>
                                                 <td>{product.title}</td>
@@ -76,7 +85,7 @@ const SearchAPIData = () => {
                                             </tr>
                                         })
                                     }
-                                </> : null
+                                </> : <h1>No products buddy</h1>
                             }
                         </tbody>
                     </table>
