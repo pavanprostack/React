@@ -8,7 +8,7 @@ const Admin = () => {
     let [products, setProducts]=useState([])
     let [errorMessage, setErrorMessage]= useState('')
     useEffect(()=>{
-        Axios.get('http://127.0.0.1:5000/api/products/').then((response)=>{
+        Axios.get('http://localhost:3000/products').then((response)=>{
             setProducts(response.data)
         }).catch((err)=>{
             setErrorMessage(err)

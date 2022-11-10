@@ -27,7 +27,7 @@ const CreateProduct = () => {
     event.preventDefault();
     //    alert(JSON.stringify(product))
 
-    let url = 'http://127.0.0.1:5000/api/products/';
+    let url = 'http://localhost:3000/products';
     Axios.post(url, product).then((response) => {
       console.log(response.data)
       setSubmitted(true);

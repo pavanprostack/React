@@ -8,7 +8,7 @@ const ProductList = () => {
     let [products, setProducts] = useState([])
 
     useEffect(() => {
-        let url = 'http://127.0.0.1:5000/api/products/'
+        let url = 'http://localhost:3000/products'
         Axios.get(url).then((response) => {
             // console.log(response)
             setProducts(response.data);
