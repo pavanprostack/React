@@ -63,10 +63,11 @@ const CreateProduct = () => {
       <div className="row">
         <div className="col-6">
           <div className="card">
-            <div className="card-header bg-primary text-white">
+            <div className="card-header bg-warning text-white">
               <h3>Create Product</h3>
             </div>
-            <div className="card-body">
+            <div className="card-body bg-success">
+               
               <form onSubmit={submitHandler}>
                 <div className='form-group'>
                   <input type="text" onChange={updateHandler} name='name' className='form-control' placeholder='Product Name' />
@@ -83,7 +84,7 @@ const CreateProduct = () => {
                 <div className='form-group'>
                   <input type="text" onChange={updateHandler} name='info' className='form-control' placeholder='Info' />
                 </div>
-                <input type="submit" className='btn btn-success' value='Create Product' />
+                <input type="submit" className='btn btn-danger' value='Create Product' />
               </form>
             </div>
           </div>
