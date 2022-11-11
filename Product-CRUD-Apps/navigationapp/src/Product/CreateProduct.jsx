@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Axios from 'axios'
+import { Navigate } from 'react-router-dom'
 
 
 
@@ -17,7 +18,7 @@ const CreateProduct = () => {
 
   let [submitted, setSubmitted] = useState(false)
   // let [errormessage, setErrormessage] = useState('')
-  
+
   let updateHandler = (event) => {
     setProduct({ ...product, [event.target.name]: event.target.value })
   }
@@ -31,7 +32,7 @@ const CreateProduct = () => {
     Axios.post(url, product).then((response) => {
       console.log(response.data)
       setSubmitted(true);
-    }).catch(() => {})
+    }).catch(() => { })
 
   }
 
@@ -42,17 +43,19 @@ const CreateProduct = () => {
     let reader = new FileReader();
     reader.readAsDataURL(imageFile);
     reader.addEventListener('load', () => {
-        if(reader.result){
-            setProduct({ ...product, image : reader.result});
-        }
-        else {
-            alert('Error Occurred');
-        }
+      if (reader.result) {
+        setProduct({ ...product, image: reader.result });
+      }
+      else {
+        alert('Error Occurred');
+      }
     });
-};
+  };
 
 
   return <>
+    {
+      submitted ? <Navigate to="/admin"/>:
 
     <div className="container mt-5">
       <pre>{JSON.stringify(product)}</pre>
@@ -87,6 +90,7 @@ const CreateProduct = () => {
         </div>
       </div>
     </div>
+     }
   </>
 }
 
