@@ -3,6 +3,7 @@ import React from 'react'
 import Home from './Home'
 
 import Navbar from './Navbar/Navbar'
+import Os from './Os/Os'
 
 
 function App(){
@@ -12,6 +13,7 @@ function App(){
          <div className='mt-5'>
         <h1>Function Component</h1>
         <Home />
+        <Os/>
         </div>
     </div>
 }
