@@ -32,13 +32,14 @@ const CreateProduct = () => {
     Axios.post(url, product).then((response) => {
       console.log(response.data)
       setSubmitted(true);
-    }).catch(() => { })
+    }).catch(( ) => { })
 
   }
 
   // Change Image
 
   let changeImage = (event) => {
+    console.log(event);
     let imageFile = event.target.files[0];
     let reader = new FileReader();
     reader.readAsDataURL(imageFile);
