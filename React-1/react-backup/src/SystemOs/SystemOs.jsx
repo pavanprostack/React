@@ -12,9 +12,9 @@ const SystemOs = () => {
         console.log(event)
         setPlatform({ ...Platform, plat: event.view.clientInformation.platform, os: event.view.clientInformation.userAgentData.platform, browser: event.view.clientInformation.userAgentData.brands[0] })
     }
-    // useEffect(() => {
-    //     getData()
-    // },[])
+    useEffect(() => {
+        
+    },[])
 
     return <>
         <div className="container mt-5">
