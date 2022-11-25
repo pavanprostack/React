@@ -15,11 +15,11 @@ const Clock = () => {
     <div className="row">
       <div className="col-4">
         <div className="card">
-          <div className="card-header bg-success text-white">
-            <h4>{currentTime}</h4>
+          <div className="card-header bg-dark text-white">
+            <h4>Time : {currentTime}</h4>
           </div>
-          <div className="card-body bg-danger text-white">
-            <h4>{currentDate}</h4>
+          <div className="card-body bg-dark text-white">
+            <h4>Date : {currentDate}</h4>
           </div>
         </div>
       </div>
