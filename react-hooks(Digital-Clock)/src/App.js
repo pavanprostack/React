@@ -8,6 +8,7 @@ import Clock from './Clock/Clock'
 import API from './UseEffectHook/API'
 import ImageEx from './useRef/ImageEx'
 import LoginEx from './useRef/LoginEx'
+import MessageEx from './useReducer/MessageEx'
 
 
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/useEffect' element={<API />} />
         <Route path='/ref' element={<ImageEx />} />
         <Route path='/login' element={<LoginEx />} />
+        <Route path='/reducer' element={<MessageEx />} />
       </Routes>
     </Router>
     </div>

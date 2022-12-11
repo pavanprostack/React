@@ -14,6 +14,7 @@ const Navbar = () => {
                 <li className='nav-list'><Link className='nav-link' to="useEffect">UseEffect</Link></li>
                 <li className='nav-list'><Link className='nav-link' to="ref">useRef</Link></li>
                 <li className='nav-list'><Link className='nav-link' to="login">useRefLogin</Link></li>
+                <li className='nav-list'><Link className='nav-link' to="reducer">useReducer</Link></li>
             </ul>
         </div>
     </nav>
