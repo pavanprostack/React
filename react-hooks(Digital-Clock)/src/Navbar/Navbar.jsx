@@ -15,6 +15,8 @@ const Navbar = () => {
                 <li className='nav-list'><Link className='nav-link' to="ref">useRef</Link></li>
                 <li className='nav-list'><Link className='nav-link' to="login">useRefLogin</Link></li>
                 <li className='nav-list'><Link className='nav-link' to="reducer">useReducer</Link></li>
+                <li className='nav-list'><Link className='nav-link' to="memo">useMemo</Link></li>
+                <li className='nav-list'><Link className='nav-link' to="context">useContext</Link></li>
             </ul>
         </div>
     </nav>

@@ -9,6 +9,8 @@ import API from './UseEffectHook/API'
 import ImageEx from './useRef/ImageEx'
 import LoginEx from './useRef/LoginEx'
 import MessageEx from './useReducer/MessageEx'
+import CounterEx from './useMemo/CounterEx'
+import ComponentA from './useContext/ComponentA'
 
 
 
@@ -27,6 +29,8 @@ const App = () => {
         <Route path='/ref' element={<ImageEx />} />
         <Route path='/login' element={<LoginEx />} />
         <Route path='/reducer' element={<MessageEx />} />
+        <Route path='/memo' element={<CounterEx />} />
+        <Route path='/context' element={<ComponentA />} />
       </Routes>
     </Router>
     </div>
