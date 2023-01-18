@@ -8,6 +8,7 @@ let App = ()=>{
     return <div>
         <Navbar />
         <h1>This is Using props examples</h1>
+        <hr/>
         <CompA />
     </div>
 }

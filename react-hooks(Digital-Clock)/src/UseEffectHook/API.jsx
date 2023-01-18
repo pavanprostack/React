@@ -30,7 +30,7 @@ const API = () => {
                             users.users.users.map((user)=>{
                                 return <tr>
                                     <td>{user.id}</td>
-                                    <td>{user.firstName}{user.lastName}</td>
+                                    <td>{user.firstName}-{user.lastName}</td>
                                     <td>{user.gender}</td>
                                     <td>{user.age}</td>
                                 </tr>

@@ -40,6 +40,7 @@ class Message extends React.Component{
         <button onClick={this.updateHandler.bind("this","Hello")}>Button1</button>
         <button onClick={this.updateHandler.bind("this","Friends")}>Button2</button>
         <button onClick={this.updateHandler.bind("this","My Dear")}>Button3</button>
+        <button onClick={this.updateHandler.bind(this, "forks")}>Button-4</button>
         </>
     }
 }

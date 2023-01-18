@@ -5,7 +5,7 @@ import { useState } from 'react'
 const CounterEx = () => {
 
     let [counter, setCounter] = useState(0)
-    let [number, setNumber] = useState(5)
+    let [number, setNumber] = useState(6)
     // const Factorial = fact(number)
     const Factorial = React.useMemo(()=>fact(number), [number])
 
