@@ -13,7 +13,7 @@ const ProductList = () => {
             // console.log(response)
             setProducts(response.data);
         }).catch(() => { })
-    }, []);
+    }, [products]);
 
 
     return <>

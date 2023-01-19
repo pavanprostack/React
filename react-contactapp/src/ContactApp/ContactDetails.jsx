@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-export class ContactDetails extends Component {
+class ContactDetails extends Component {
   render() {
     return <>
-      {/* <pre>{JSON.stringify(this.props)}</pre> */}
+      <pre>{JSON.stringify(this.props)}</pre>
       <div className="container">
         <div className="row">
-            <div className="col">
+            <div className="col-md">
                 <div className="card">
                     <div className="card-header bg-warning">
                         {
